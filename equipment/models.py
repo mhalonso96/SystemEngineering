@@ -20,8 +20,7 @@ class Equipment(models.Model):
     has_calibration = models.BooleanField()
     last_calibration_at = models.DateField(blank=True, null=True)
     last_calibration_by = models.CharField(User,blank=True, null=True, max_length=255)
-    cabinet = models.PositiveIntegerField()
-    shelf = models.PositiveIntegerField()
+    
 
     def __str__(self) -> str:
         return self.name

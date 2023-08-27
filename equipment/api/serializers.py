@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from ..models import Equipment
-from django.contrib.auth.models import User
 
 class EquipmentSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only= True)
@@ -18,26 +17,8 @@ class EquipmentSerializer(serializers.ModelSerializer):
     has_calibration = serializers.BooleanField(required= False)
     last_calibration_at = serializers.DateField(required=False)
     last_calibration_by = serializers.CharField(required=False)
-    cabinet = serializers.IntegerField(required=True)
-    shelf = serializers.IntegerField(required=True)
-    
+        
     class Meta:
         model = Equipment
-        fields = ('id', 
-                  'name',
-                  'description',
-                  'vendor', 
-                  'email_vendor',
-                  'status',
-                  'note',
-                  'has_license', 
-                  'version', 
-                  'ip_address',
-                  'last_revision_at',
-                  'last_revision_by', 
-                  'has_calibration', 
-                  'last_calibration_at', 
-                  'last_calibration_by',
-                  'cabinet',
-                  'shelf',) 
-    
+        fields = '__all__'
+
