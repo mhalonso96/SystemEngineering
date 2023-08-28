@@ -4,7 +4,7 @@ from technician.models import Technician
 class Department (models.Model):
     class Meta:
         verbose_name = 'Department'
-        verbose_name_plural = 'Departments'
+        verbose_name_plural = 'Department'
     name = models.CharField(max_length= 100)
     leader = models.ForeignKey(Technician, on_delete=models.CASCADE)
 
