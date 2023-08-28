@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'equipment',
     'manager',
     'technician',
+    'testlab',
+    'department',
 ]
 
 MIDDLEWARE = [
