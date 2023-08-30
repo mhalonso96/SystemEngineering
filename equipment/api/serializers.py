@@ -17,8 +17,11 @@ class EquipmentSerializer(serializers.ModelSerializer):
     has_calibration = serializers.BooleanField(required= False)
     last_calibration_at = serializers.DateField(required=False)
     last_calibration_by = serializers.CharField(required=False)
+    cabinet = serializers.IntegerField(required= True)
+    shelf = serializers.IntegerField(required = True)
         
     class Meta:
         model = Equipment
         fields = '__all__'
+        depth = 1
 
